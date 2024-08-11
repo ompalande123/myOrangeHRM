@@ -9,18 +9,26 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
 
-public class LoginSteps {
+public class LoginPageSteps {
 	
-	private WebDriver driver;
+	WebDriver driver;
 	private LoginPage loginPage;
+	
+	//constructor to load WebDriver from DriverFactory and it will also initialize loginPage object
+	public LoginPageSteps()
+	{
+		this.driver=DriverFactory.getDriver();
+		loginPage=new LoginPage(DriverFactory.getDriver());
+	}
+	
+	
+	
 	
 	@Given("I navigate to login page")
 	public void I_navigate_to_login_page() throws InterruptedException
 	{
-		driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		loginPage=new LoginPage(driver);
+		DriverFactory.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		loginPage=new LoginPage(DriverFactory.getDriver());
 		Thread.sleep(10000);
 		
 	}
@@ -51,7 +59,8 @@ public class LoginSteps {
 	public void I_should_be_logged_in_successfully()
 	{
 		System.out.println("Login successful");
-		driver.quit();
+//		driver.quit();
+		
 		
 	}
 	
