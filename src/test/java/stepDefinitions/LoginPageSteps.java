@@ -8,6 +8,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
+import utilities.DriverFactory;
+
+
+/* This is step definition class
+ * which consists step definition from feature files
+ * We need to use constructor to initialize respective page class
+ * and we can use driver from DriverFactory class
+ */
+
 
 public class LoginPageSteps {
 	

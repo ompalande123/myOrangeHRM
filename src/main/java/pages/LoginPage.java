@@ -7,6 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
+/* This is page class where we can store all the WebElements from that page
+ * This page class consists of 3 parts
+ * 1. constructor - this will have driver and PageFactory class to achieve Page objects mapping easier
+ * 2. locators - we can locate locators from respective page using @FindBy annotation (This is part of PageFactory)
+ * 3. Action methods - These methods will define what action to be take on these WebElements
+ */
+
+
 public class LoginPage {
 	
 	private WebDriver driver;
